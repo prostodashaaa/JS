@@ -7,8 +7,10 @@ let arr = Array.from(
 );
 
 function arrayClean(arr, fn) {
-  if (arr === undefined || arr.length == 0) {
-    return 'Пустой массив!';
+  if (!Array.isArray(arr)) {
+    return "Это не массив";
+  } else if (arr.length === 0) {
+    return "Пустой массив!";
   }
   let res = [];
   for (let element of arr) {
@@ -20,10 +22,7 @@ function arrayClean(arr, fn) {
 }
 
 function filter(element) {
-    if (element % 2 === 0 && element !== 0) {
-      return false;
-    }
-    return true;
+  return element % 2 === 0 && element !== 0;
 }
 
 console.log(arrayClean(arr, filter));

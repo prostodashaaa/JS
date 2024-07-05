@@ -9,17 +9,13 @@ const cardNumber = Array.from({ length: 19 }, () => {
   return Math.round(Math.random() * max);
 }).join("");
 
-
 function algorithmLuna(cardNumber) {
-  let validCardNumber = cardNumber.replaceAll("-", "").split('');
+  let validCardNumber = cardNumber.replaceAll("-", "").split("");
   validCardNumber = validCardNumber.map((item, index) =>
-    (index % 2 !== 0) ? (item * 2 > 9) ? item * 2 - 9 : +item * 2 : +item
+    index % 2 === 0 ? (item * 2 > 9 ? item * 2 - 9 : +item * 2) : +item
   );
   let sum = validCardNumber.reduce((sum, current) => sum + current, 0);
-  if (sum % 10 == 0) {
-    return true;
-  }
-  return false;
+  return sum % 10 == 0;
 }
 
 console.log(algorithmLuna(cardNumber));
