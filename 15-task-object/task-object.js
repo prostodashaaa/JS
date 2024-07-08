@@ -1,18 +1,19 @@
 const ToDoList = {
   task: [
-    { title: "Помыть посуду", id: 1, priority: 9 },
-    { title: "Помыть пол", id: 2, priority: 2 },
+    { id: 1, title: "Помыть посуду", priority: 9 },
+    { id: 2, title: "Помыть пол", priority: 2 },
   ],
 
-  addTask: function (title, priority = 1) {
-    if (title) {
+  addTask: function (obj) {
+    let title = obj?.title;
+    let priority = obj?.priority;
+    if (title && priority) {
       let lastTask = this.task.at(-1).id;
       this.task.push({
-        title,
         id: lastTask + 1,
-        priority,
+        ...obj,
       });
-      return true;
+      return obj;
     }
     console.log("Введите название задачи");
     return false;
@@ -26,27 +27,37 @@ const ToDoList = {
     return taskLength !== newTaskLength;
   },
 
-  changeById: function (id, title = null, priority = null) {
-    let changeItem = this.task.find((item) => item.id == id);
-    if (title !== null) {
-      changeItem.title = title;
+  changeById: function (obj) {
+    let id = obj?.id;
+    let title = obj?.title;
+    let priority = obj?.priority;
+    if (id) {
+      let changeItem = this.task.find((item) => item.id == id);
+      if (changeItem) {
+        if (title) {
+          changeItem.title = title;
+        }
+        if (priority !== undefined) {
+          changeItem.priority = priority;
+        }
+        return changeItem;
+      }
     }
-    if (priority !== null) {
-      changeItem.priority = priority;
-    }
-    return changeItem;
+    return "Введен некорректный id!";
   },
 
   sortTask: function () {
     this.task.sort((a, b) => a.priority - b.priority);
-  }
+  },
 };
 
-console.log(ToDoList.addTask("Что-то", 6));
+console.log(
+  ToDoList.addTask({ title: "Что-то", priority: 6, ggg: 7, gggg: 8 })
+);
+console.log(...ToDoList.task);
+
+console.log(ToDoList.changeById({ id: 5, title: "ybxtuj", priority: 7 }));
 console.log(ToDoList.task);
 
-// console.log(ToDoList.changeById(3, "ybxtuj", 7));
-// console.log(ToDoList.task);
-
-console.log(ToDoList.sortTask());
-console.log(ToDoList.task);
+// console.log(ToDoList.sortTask());
+// console.log(...ToDoList.task);
