@@ -1,0 +1,94 @@
+:root {
+  --background-color: #5d5c61e9;
+  --background-hover: #eae8e8fb;
+  --background-panel: #444346;
+  --background-section: #5f5c61;
+  --color-text: #000;
+  --border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+body {
+  background: var(--background-color);
+  margin: 0;
+}
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-size: 34px;
+  text-align: center;
+}
+
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  border: 2px solid var(--background-section);
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+}
+
+input:hover,
+button:hover {
+  background-color: var(--background-hover);
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  border: 2px solid var(--background-panel);
+}
+
+button {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--background-section);
+  padding: 10px 30px;
+  border: 2px solid var(--background-section);
+}
+
+.wrapper_calc {
+  max-width: 720px;
+  margin: 150px auto;
+  border: 3px solid var(--background-panel);
+  background-color: var(--background-section);
+  border-radius: var(--border-radius);
+  padding: 20px 30px;
+}
+
+.calc__panel {
+  background-color: var(--background-panel);
+  min-height: 50px;
+  padding: 10px 40px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  color: #fff;
+}
+
+.calc__input {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.calc__choose {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button_action {
+  font-size: 28px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="wrapper_calc">
+      <h1>Калькулятор</h1>
+      <form>
+        <div class="calc__panel">I love this!</div>
+        <div class="calc__input">
+          <input type="number" placeholder="Введите первое число..." />
+          <input type="number" placeholder="Введите второе число..." />
+        </div>
+        <div class="calc__choose">
+          <button class="button_action" id="plus" type="button">&plus;</button>
+          <button class="button_action" id="minus" type="button">
+            &minus;
+          </button>
+          <button class="button_action" id="times" type="button">
+            &times;
+          </button>
+          <button class="button_action" id="divide" type="button">
+            &divide;
+          </button>
+        </div>
+      </form>
+    </section>
+    <script src="./calc.js"></script>
+  </body>
+</html>
