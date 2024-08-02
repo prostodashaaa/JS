@@ -16,20 +16,38 @@
     <section class="wrapper_calc">
       <h1>Калькулятор</h1>
       <form>
-        <div class="calc__panel">I love this!</div>
+        <div class="calc__panel"></div>
         <div class="calc__input">
           <input type="number" placeholder="Введите первое число..." />
           <input type="number" placeholder="Введите второе число..." />
         </div>
         <div class="calc__choose">
-          <button class="button_action" id="plus" type="button">&plus;</button>
-          <button class="button_action" id="minus" type="button">
+          <button
+            class="button_action"
+            type="button"
+            onclick="getAnswer('sum')"
+          >
+            &plus;
+          </button>
+          <button
+            class="button_action"
+            type="button"
+            onclick="getAnswer('diff')"
+          >
             &minus;
           </button>
-          <button class="button_action" id="times" type="button">
+          <button
+            class="button_action"
+            type="button"
+            onclick="getAnswer('multiply')"
+          >
             &times;
           </button>
-          <button class="button_action" id="divide" type="button">
+          <button
+            class="button_action"
+            type="button"
+            onclick="getAnswer('div')"
+          >
             &divide;
           </button>
         </div>

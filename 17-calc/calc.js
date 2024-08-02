@@ -1,40 +1,31 @@
-function sum(a, b) {
-  return a + b;
-}
+const calculate = {
+  sum: function () {
+    return this.a + this.b;
+  },
 
-function diff(a, b) {
-  return a - b;
-}
+  diff: function () {
+    return this.a - this.b;
+  },
 
-function multiply(a, b) {
-  return a * b;
-}
+  multiply: function () {
+    return this.a * this.b;
+  },
 
-function div(a, b) {
-  if (b === 0) {
-    return 'На ноль делить нельзя)';
-  }
-  return a / b;
-}
+  div: function () {
+    if (this.b === 0) {
+      return "На ноль делить нельзя)";
+    }
+    return this.a / this.b;
+  },
 
-const input = document.querySelectorAll("input");
+  read() {
+    this.a = Number(document.querySelectorAll("input")[0].value);
+    this.b = Number(document.querySelectorAll("input")[1].value);
+  },
+};
 
-document.getElementById("plus").addEventListener("click", function () {
-  let result = sum(Number(input[0].value), Number(input[1].value));
+function getAnswer(action) {
+  calculate.read();
+  let result = calculate[action]();
   document.querySelector(".calc__panel").innerHTML = result;
-});
-
-document.getElementById("minus").addEventListener("click", function () {
-  let result = diff(Number(input[0].value), Number(input[1].value));
-  document.querySelector(".calc__panel").innerHTML = result;
-});
-
-document.getElementById("times").addEventListener("click", function () {
-  let result = multiply(Number(input[0].value), Number(input[1].value));
-  document.querySelector(".calc__panel").innerHTML = result;
-});
-
-document.getElementById("divide").addEventListener("click", function () {
-  let result = div(Number(input[0].value), Number(input[1].value));
-  document.querySelector(".calc__panel").innerHTML = result;
-});
+}
