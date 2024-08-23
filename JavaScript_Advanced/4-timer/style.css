@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #98624c;
+}
+
+.wrapper {
+  width: max-content;
+  margin: 50px auto;
+}
+
+img {
+  display: block;
+  margin: 10px auto;
+}
+
+.timer_panel {
+  background-color: #5434318a;
+  padding: 25px;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.timer_panel__item {
+  width: 175px;
+}
