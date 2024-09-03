@@ -1,37 +1,41 @@
 class Billing {
   #amount = 100;
 
-  getAmount() {
+  calculateTotal() {
+    console.log("lll");
     return this.#amount;
   }
-
-  calculateTotal() {}
 }
 
 class fixBilling extends Billing {
+
   calculateTotal() {
-    return this.getAmount();
+    return super.calculateTotal();
   }
 }
 
 class hourBilling extends Billing {
+
   calculateTotal(hour) {
-    return this.getAmount() * hour;
+    return super.calculateTotal() * hour;
   }
 }
 
 class itemBilling extends Billing {
 
   calculateTotal(...args) {
-    return this.getAmount() * args.length;
+    return super.calculateTotal() * args.length;
   }
 }
 
 const fix = new fixBilling();
+console.log(fix);
 console.log(fix.calculateTotal());
 
 const hour = new hourBilling();
+console.log(hour);
 console.log(hour.calculateTotal(2));
 
 const item = new itemBilling();
+console.log(item);
 console.log(item.calculateTotal(2, 3, 3, 4));
