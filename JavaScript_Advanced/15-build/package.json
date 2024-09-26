@@ -1,10 +1,10 @@
 {
-  "name": "build-practice",
+  "name": "npm-practice",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
-    "build": "rollup",
-    "start": "live-server",
+    "build": "rollup ./index.js --format cjs --file ./bundle.js && echo 'building complete!",
+    "start": "live-server --port=14005 --open=/?starter=nodejs&homework=15-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Darya Kozyreva",
